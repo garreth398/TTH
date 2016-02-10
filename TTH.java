@@ -12,38 +12,43 @@ import java.io.FileNotFoundException;
 public class TTH extends JFrame implements ActionListener
 {
 	//Basic variable needed.
-	JFrame panel;
+	JPanel panel;
 	JButton gtd;
 	JButton mht;
 	JButton hq;
 	JButton gft;
+	JToolBar toolbar;
 	
 	public TTH()
 	{
+		super("Things to Help");
 		//Set variables.
-		panel = new JFrame("Things to Help");
-		panel.setSize(180*3,180*3);
-		panel.setResizable(true);
-		panel.setLocationRelativeTo(null);
-		panel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel = new JPanel();
+		setSize(180*3,180*3);
+		setResizable(true);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		toolbar = new JToolBar();
 		gtd = new JButton("Good Thought Diary");
 		mht = new JButton("Mental Health Tips");
 		hq = new JButton("Happy Quotes");
-		gft = new JButton("Goals For Today");
+		gft = new JButton("Goals For Today"); 
 		
-		//Add action listeners so bittons do things.
+		//Add action listeners so buttons do things.
 		gtd.addActionListener(this);
 		mht.addActionListener(this);
 		hq.addActionListener(this);
 		gft.addActionListener(this);
 		
 		panel.setLayout(new BorderLayout());	
-		add(gtd);
-		add(mht);
-		add(hq);
-		add(gft);	
-		panel.setVisible(true);
+		toolbar.add(gtd);
+		toolbar.add(mht);
+		toolbar.add(hq);
+		toolbar.add(gft);
+		panel.add(toolbar,BorderLayout.NORTH); 
+		add(panel);
+		setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent e)
