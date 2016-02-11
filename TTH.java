@@ -53,6 +53,21 @@ public class TTH extends JFrame implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		
+		if(e.getSource() == gtd)
+		{
+			GTD testGTD = new GTD();
+		}
+		else if(e.getSource() == mht)
+		{
+			MHT testMHT = new MHT();
+		}
+		else if(e.getSource() == hq)
+		{
+			HQ testHQ = new HQ();
+		}
+		else if(e.getSource() == gft)
+		{
+			GFT testGFT = new GFT();
+		}
 	}
 }
