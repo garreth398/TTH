@@ -13,11 +13,6 @@ public class GTD extends JFrame implements ActionListener
 {
 	//Basic variable needed.
 	JPanel panel;
-	JButton tth;
-	JButton mht;
-	JButton hq;
-	JButton gft;
-	JToolBar toolbar;
 	
 	public GTD()
 	{
@@ -27,26 +22,9 @@ public class GTD extends JFrame implements ActionListener
 		setSize(180*3,180*3);
 		setResizable(true);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		
-		toolbar = new JToolBar();
-		tth = new JButton("Things To Help");
-		mht = new JButton("Mental Health Tips");
-		hq = new JButton("Happy Quotes");
-		gft = new JButton("Goals For Today"); 
-		
-		//Add action listeners so buttons do things.
-		tth.addActionListener(this);
-		mht.addActionListener(this);
-		hq.addActionListener(this);
-		gft.addActionListener(this);
-		
-		panel.setLayout(new BorderLayout());	
-		toolbar.add(tth);
-		toolbar.add(mht);
-		toolbar.add(hq);
-		toolbar.add(gft);
-		panel.add(toolbar,BorderLayout.NORTH); 
+		panel.setLayout(new BorderLayout());	 
 		add(panel);
 		setVisible(true);
 	}
