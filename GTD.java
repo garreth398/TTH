@@ -22,10 +22,11 @@ public class GTD extends JFrame implements ActionListener
 		setSize(180*3,180*3);
 		setResizable(true);
 		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		panel.setLayout(new BorderLayout());	 
+		panel.setLayout(new BorderLayout());
 		add(panel);
+		add(new TextAdder());
 		setVisible(true);
 	}
 	
