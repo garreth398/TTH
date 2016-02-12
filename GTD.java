@@ -36,7 +36,7 @@ public class GTD extends JFrame implements ActionListener
 		add(panel);
         add(textField);
         add(addButton);
-        add(label, FlowLayout.CENTER);
+        add(label);
         addButton.addActionListener(this);
 		setVisible(true);
 	}
