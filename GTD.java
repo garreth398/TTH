@@ -79,7 +79,7 @@ public class GTD extends JFrame implements ActionListener
 		{
 			w.write(s);
 		}
-		catch(FileNotFoundException e) 
+		catch(IOException e) 
 		{
 			System.err.println("File not found. Please scan in new file.");
 		}
