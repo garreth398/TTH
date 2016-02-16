@@ -20,9 +20,10 @@ public class GTD extends JFrame implements ActionListener
     JLabel label;
 	File file;
 	Scanner scan;
-	FileWriter fw;
+	PrintWriter fw;
 	
 	public GTD() throws IOException
+	
 	{
 		super("Good Thoughts Diary");
 		//Set variables.
@@ -59,8 +60,6 @@ public class GTD extends JFrame implements ActionListener
 		}
         addButton.addActionListener(this);
 		setVisible(true);
-		
-		fw = new FileWriter(file);
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -69,15 +68,32 @@ public class GTD extends JFrame implements ActionListener
         textField.setText("");
         textField.requestFocus();
         label.setText(thought);
-		saveThought(thought, fw);
+		saveThought(thought, file);
         thought = "";
+		file = new File("GT.txt");
+		ArrayList<String> labels1 = new ArrayList<>();
+		int i = 0;
+		while(scan.hasNext())
+		{
+			String s1 = scan.nextLine();
+			labels1.add(s1);
+		}
+		for(int x = 0; x < labels1.size(); x++)
+		{
+			JLabel thoughts = new JLabel();
+			thoughts.setText(labels1.get(x));
+			panel.add(thoughts);
+		}
+		label.setText("");
 	}
 	
-	public void saveThought(String s, FileWriter w) throws IOException
+	public void saveThought(String s, File file)
 	{
 		try
 		{
-			w.write(s);
+			fw = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+			fw.println(s);
+			fw.close();
 		}
 		catch(IOException e) 
 		{
