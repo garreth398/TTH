@@ -37,9 +37,8 @@ public class GFT extends JFrame implements ActionListener
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new FlowLayout());
 		panel.setLayout(new BorderLayout());
-		
-		file = new File("GFT.txt");
-        try {
+	try {	
+	    file = new File("GFT.txt");
             scan = new Scanner(file);
         } catch (IOException e) {
             e.printStackTrace();
