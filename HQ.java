@@ -37,8 +37,8 @@ public class HQ extends JFrame implements ActionListener
 		panel.setLayout(new BorderLayout());
 		
 		quotes = new ArrayList<>();
-		file = new File("hq.txt");
-        try {
+	try {
+	    file = new File("hq.txt");
             scan = new Scanner(file);
         } catch (IOException e) {
             e.printStackTrace();
